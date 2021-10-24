@@ -1,0 +1,23 @@
+@import "./colors";
+@import "./typography";
+@import "./responsive_mixin";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+  &:focus {
+    outline: 0;
+  }
+}
+
+div[class="App"] {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
