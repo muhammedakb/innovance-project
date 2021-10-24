@@ -9,9 +9,9 @@ const Profile: React.FC<Props> = ({ title }) => {
   useTitle(title);
 
   return (
-    <div>
+    <section>
       <h1>Profile page</h1>
-    </div>
+    </section>
   );
 };
 

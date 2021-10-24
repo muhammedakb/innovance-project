@@ -1,3 +1,5 @@
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,8 +8,13 @@ import {
 } from "react-router-dom";
 import Dashboard from "./layout/DashboardLayout/Dashboard";
 import { routes } from "./routes";
+import { connect } from "react-redux";
 
-function App() {
+const mapStateToProps = (state: any) => ({
+  user: state.auth.user,
+});
+
+function App({ user }: any) {
   return (
     <Router>
       <div className="App">
@@ -19,7 +26,7 @@ function App() {
               path={route.path}
               key={index}
               render={() => {
-                if (route.auth) {
+                if (route.auth && !user) {
                   return <Redirect to="/login" />;
                 }
                 return <route.component title={route.title} />;
@@ -27,9 +34,10 @@ function App() {
             />
           ))}
         </Switch>
+        <ToastContainer />
       </div>
     </Router>
   );
 }
 
-export default App;
+export default connect(mapStateToProps)(App);

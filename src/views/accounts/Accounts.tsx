@@ -8,9 +8,9 @@ interface Props {
 const Accounts: React.FC<Props> = ({ title }) => {
   useTitle(title);
   return (
-    <div>
+    <section>
       <h1>Accounts page</h1>
-    </div>
+    </section>
   );
 };
 

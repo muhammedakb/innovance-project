@@ -4,15 +4,17 @@ import { icons } from "../../components/icons/icons";
 import logo from "../../components/icons/logo.svg";
 import settings from "../../components/icons/settings.svg";
 import profile from "../../components/icons/profile.svg";
-import logout from "../../components/icons/logout.svg";
+import logoutIcon from "../../components/icons/logout.svg";
 import "./dashboard.scss";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../stores/auth";
 
 const Dashboard: React.FC = () => {
+  const dispatch = useDispatch();
+  const { user } = useSelector((state: any) => state.auth);
+
   return (
-    <div
-      style={{ backgroundColor: "#2366B5", color: "#fff" }}
-      className="dashboard"
-    >
+    <div className="dashboard">
       <img src={logo} alt="logo" className="logo" />
 
       <div className="navbar">
@@ -27,25 +29,27 @@ const Dashboard: React.FC = () => {
           ))}
         </ul>
       </div>
-      <div className="account">
-        <ul className="icons">
-          <li className="icons-line">
-            <NavLink to="/settings" activeClassName="selected">
-              <img src={settings} alt="" />
-              <span>Settings</span>
-            </NavLink>
-          </li>
-          <li className="icons-line">
-            <NavLink to="/profile" activeClassName="selected">
-              <img src={profile} alt="" />
-              <span>Profile</span>
-            </NavLink>
-          </li>
-        </ul>
-        <button className="logout">
-          <img src={logout} alt="<-" /> <span>Log Out</span>
-        </button>
-      </div>
+      {user && (
+        <div className="account">
+          <ul className="icons">
+            <li className="icons-line">
+              <NavLink to="/settings" activeClassName="selected">
+                <img src={settings} alt="" />
+                <span>Settings</span>
+              </NavLink>
+            </li>
+            <li className="icons-line">
+              <NavLink to="/profile" activeClassName="selected">
+                <img src={profile} alt="" />
+                <span>Profile</span>
+              </NavLink>
+            </li>
+          </ul>
+          <button className="logout" onClick={() => dispatch(logout())}>
+            <img src={logoutIcon} alt="<-" /> <span>Log Out</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 };

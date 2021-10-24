@@ -7,9 +7,9 @@ interface Props {
 const Settings: React.FC<Props> = ({ title }) => {
   useTitle(title);
   return (
-    <div>
+    <section>
       <h1>Settings page</h1>
-    </div>
+    </section>
   );
 };
 

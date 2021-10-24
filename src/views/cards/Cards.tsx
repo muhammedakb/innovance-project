@@ -8,9 +8,9 @@ interface Props {
 const Cards: React.FC<Props> = ({ title }) => {
   useTitle(title);
   return (
-    <div>
+    <section>
       <h1>Cards page</h1>
-    </div>
+    </section>
   );
 };
 

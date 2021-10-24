@@ -6,9 +6,9 @@ interface Props {
 const Transactions: React.FC<Props> = ({ title }) => {
   useTitle(title);
   return (
-    <div>
+    <section>
       <h1>Transactions page</h1>
-    </div>
+    </section>
   );
 };
 
