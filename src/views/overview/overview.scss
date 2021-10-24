@@ -17,23 +17,28 @@
         box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
         width: 315px;
         height: 179px;
-        padding: 21px 61px 21px 62px;
-        &:not(:first-child) {
-          margin-left: 25px;
-          text-align: center;
-        }
+        padding: 21px 61px 0px 62px;
         .balance-title {
           font-size: 21px;
           font-weight: 800;
+          &.new {
+            font-size: 17px;
+            color: #535353;
+          }
+        }
+        img {
+          margin-top: 27px;
         }
         span {
           color: #2366b5;
           font-weight: 800;
+          display: inline-block;
+          margin-top: 35px;
           &.money {
             font-size: 40px;
           }
           &.lira {
-            font-size: 35px;
+            font-size: 30px;
             margin-left: 10px;
           }
         }

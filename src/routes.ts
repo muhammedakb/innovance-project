@@ -1,6 +1,6 @@
 import React from "react";
 import Accounts from "./views/accounts/Accounts";
-import Cards from "./views/cards/Cards";
+import Cards from "./views/cards/";
 import Login from "./views/login/Login";
 import Overview from "./views/overview/Overview";
 import Profile from "./views/profile/Profile";

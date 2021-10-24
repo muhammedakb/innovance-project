@@ -1,0 +1,23 @@
+.cards {
+  background-color: #fff;
+  color: #000;
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 88px;
+    .card {
+      height: 169px;
+      width: 284px;
+      border-radius: 20px;
+      &.debit {
+        background: linear-gradient(106.15deg, #3431c2 6.17%, #cd2525 102.88%);
+      }
+      &.credit {
+        background: linear-gradient(106.15deg, #31c285 6.17%, #254acd 102.88%);
+      }
+      &:not(:first-child) {
+        margin-left: 30px;
+      }
+    }
+  }
+}
