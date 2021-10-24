@@ -25,28 +25,28 @@ const Login: React.FC<Props> = ({ title }) => {
       [e.target.name]: e.target.value,
     });
   };
+
   const checkUserValidate = async (username: string, password: string) => {
-    if (username === "innovance" && password === "1234") {
+    if (username === "innovance" && password === "123456") {
       await succ("Giriş başarılı 🎉");
       await dispatch(
         login(
           JSON.stringify({
             username: username,
             password: password,
+            jwt: "112sd2fs823451df56",
           })
         )
       );
-      await setTimeout(() => {
-        history.push("/overview");
-      }, 1000);
+      await history.push("/overview");
+      // await setTimeout(() => {
+      //   history.push("/overview");
+      // }, 500);
     } else {
       await error("Kullanıcı adı veya şifre hatalı");
-      await setState({
-        username: "",
-        password: "",
-      });
     }
   };
+
   const onSubmitLogin = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const username = form.username;
@@ -54,6 +54,8 @@ const Login: React.FC<Props> = ({ title }) => {
     await console.log([username, password]);
     await checkUserValidate(username, password);
   };
+
+  const passLen = form.password.length;
   return (
     <section className="login">
       <div className="header">
@@ -66,23 +68,26 @@ const Login: React.FC<Props> = ({ title }) => {
           name="username"
           id="username"
           placeholder="innovance"
-          value={form.username}
           onChange={updateField}
+          required
         />
         <input
+          className={passLen < 6 && passLen > 0 ? "error" : ""}
           type="password"
           name="password"
           id="password"
-          placeholder="1234"
-          value={form.password}
+          placeholder="123456"
           onChange={updateField}
+          required
         />
-        {form.password.length < 4 && form.password.length > 0 && (
+        {passLen < 6 && passLen > 0 && (
           <span className="alert">
-            Şifre uzunluğu minumum 4 karakter olmalı!
+            Şifre uzunluğu minumum 6 karakter olmalı!
           </span>
         )}
-        <button type="submit">Login</button>
+        <button type="submit" className={passLen < 6 ? "disable" : ""}>
+          Login
+        </button>
         <p>Forgot Password</p>
       </form>
     </section>

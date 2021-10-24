@@ -17,6 +17,10 @@
     width: 100%;
     position: absolute;
     top: 160px;
+    &.disable {
+      filter: blur(8px);
+      pointer-events: none;
+    }
   }
   .account {
     width: 100%;

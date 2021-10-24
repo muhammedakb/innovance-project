@@ -17,7 +17,7 @@ const Dashboard: React.FC = () => {
     <div className="dashboard">
       <img src={logo} alt="logo" className="logo" />
 
-      <div className="navbar">
+      <div className={`navbar ${!user ? "disable" : ""}`}>
         <ul className="icons">
           {icons.map((icon, index) => (
             <li className="icons-line" key={index}>

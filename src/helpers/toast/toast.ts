@@ -3,7 +3,7 @@ import { toast, Flip } from "react-toastify";
 export function succ(message: string) {
   return toast.success(message, {
     position: "top-right",
-    autoClose: 3000,
+    autoClose: 2500,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -17,7 +17,7 @@ export function succ(message: string) {
 export function error(message: string) {
   return toast.error(message, {
     position: "top-right",
-    autoClose: 3000,
+    autoClose: 2500,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,

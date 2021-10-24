@@ -19,6 +19,13 @@ export interface IRoutes {
 
 export const routes: IRoutes[] = [
   {
+    path: "/",
+    title: "Login",
+    exact: true,
+    component: Login,
+    auth: false,
+  },
+  {
     path: "/login",
     title: "Login",
     exact: true,
