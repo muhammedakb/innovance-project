@@ -1,28 +1,28 @@
 {
   "cards": [
     {
-      "id": 1,
+      "id": 159865274,
       "type": "debit",
       "holder": "muhammet akbulut",
       "no": "4802 - 2215 - 1183 - 4209",
       "amount": 5600,
       "create": "25/10/2019",
-      "expiration-date": "25/10/2025",
-      "max-transfer-limit": 20000,
+      "expirationDate": "25/10/2025",
+      "maxTransferLimit": 20000,
       "credit": false,
       "contactless": true
     },
     {
-      "id": 2,
+      "id": 365871596,
       "type": "credit",
       "holder": "muhammet akbulut",
       "no": "4801 - 3000 - 2100 - 5300",
       "amount": 0,
       "create": "25/10/2021",
-      "expiration-date": "25/10/2027",
-      "max-transfer-limit": 20000,
+      "expirationDate": "25/10/2027",
+      "maxTransferLimit": 20000,
       "credit": true,
-      "max-credit": 230000,
+      "maxCredit": 230000,
       "contactless": true
     }
   ],
@@ -30,11 +30,11 @@
     {
       "name": "muhammet",
       "surname": "akbulut",
-      "birthday": "13/11/1998",
+      "birthday": "1998-11-13",
       "email": "muhammetakb68@gmail.com",
       "img": "https://media-exp1.licdn.com/dms/image/C4D03AQGo1YC88B8MsQ/profile-displayphoto-shrink_800_800/0/1628959012912?e=1640822400&v=beta&t=p90D7CgNYad4vqOEqybFExaWk2MVBrUonpp3y7FR9C4",
-      "cover-photo": "https://pbs.twimg.com/profile_banners/1309757676902121473/1627244471/1500x500",
-      "city": "istanbul"
+      "coverPhoto": "https://pbs.twimg.com/profile_banners/1309757676902121473/1627244471/1500x500",
+      "city": "İstanbul"
     }
   ]
 }

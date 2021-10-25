@@ -1,39 +1,46 @@
-import React from "react";
+import { useEffect } from "react";
 import { MdDateRange, MdMail, MdLocationOn } from "react-icons/md";
+import { getProfileAsync } from "../../stores/profile";
+import { useSelector, useDispatch } from "react-redux";
+import Error from "../error/Error";
 
-interface Props {}
+const ProfileCard = () => {
+  const dispatch = useDispatch();
+  const data = useSelector((state: any) => state.profile.items);
+  const error = useSelector((state: any) => state.profile.error);
 
-const ProfileCard = (props: Props) => {
-  return (
+  useEffect(() => {
+    dispatch(getProfileAsync());
+  }, [dispatch]);
+
+  if (error) {
+    return <Error message={error} />;
+  }
+
+  return data.map((user: any) => (
     <div className="profile-card">
       <div className="head-img">
-        <img
-            src="https://pbs.twimg.com/profile_banners/1309757676902121473/1627244471/1500x500"
-          alt=""
-          className="cover"
-        />
+        <img src={user.coverPhoto} alt="" className="cover" />
         <div className="side">
-          <img
-            src="https://media-exp1.licdn.com/dms/image/C4D03AQGo1YC88B8MsQ/profile-displayphoto-shrink_800_800/0/1628959012912?e=1640822400&v=beta&t=p90D7CgNYad4vqOEqybFExaWk2MVBrUonpp3y7FR9C4"
-            alt=""
-            className="profile-img"
-          />
+          <img src={user.img} alt="" className="profile-img" />
           <div className="content">
-            <p className="username">muhammet akbulut</p>
+            <p className="username">
+              {user.name} {user.surname}
+            </p>
             <p className="birthday">
-              <MdDateRange /> 13/11/1998
+              <MdDateRange /> {user.birthday}
             </p>
             <p className="email">
-              <MdMail /> muhammetakb68@gmail.com
+              <MdMail /> {user.email}
             </p>
             <p className="city">
-              <MdLocationOn /> istanbul
+              <MdLocationOn /> {user.city}
             </p>
           </div>
         </div>
       </div>
     </div>
-  );
+  ));
 };
 
 export default ProfileCard;
