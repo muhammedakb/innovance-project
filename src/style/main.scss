@@ -22,6 +22,7 @@ div[class="App"] {
   width: 100vw;
   section {
     width: calc(100vw - 242px);
+    margin-left: 242px;
     &:not(.login) {
       padding: 29px;
     }

@@ -47,11 +47,11 @@ const Login: React.FC<Props> = ({ title }) => {
     }
   };
 
-  const onSubmitLogin = async (e: { preventDefault: () => void }) => {
+  const onSubmitLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const username = form.username;
     const password = form.password;
-    await console.log([username, password]);
+    // await console.log([username, password]);
     await checkUserValidate(username, password);
   };
 

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
+
 .cards {
   background-color: #fff;
   color: #000;
@@ -5,18 +7,37 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 88px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #ccc7c7;
+    a:not(:first-child) {
+      margin-left: 30px;
+    }
     .card {
       height: 169px;
       width: 284px;
       border-radius: 20px;
+      padding: 24px;
+      text-transform: capitalize;
+      color: #fff;
+      filter: drop-shadow(0px 0px 10px #2366b5);
+      &:hover {
+        transform: scale(1.05);
+      }
       &.debit {
         background: linear-gradient(106.15deg, #3431c2 6.17%, #cd2525 102.88%);
       }
       &.credit {
         background: linear-gradient(106.15deg, #31c285 6.17%, #254acd 102.88%);
       }
-      &:not(:first-child) {
-        margin-left: 30px;
+
+      .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .foot {
+        margin-top: 53px;
+        font-family: "IBM Plex Mono", monospace;
       }
     }
   }
