@@ -1,3 +1,33 @@
+Online bankacılık uygulaması
+Projede temel olarak mobil veya internet bankacılığı için kullanılan birkaç temel işlemi yapmaya çalıştım
+
+Tasarımı figma üzerinden buldum.
+
+
+Overview - Cards - Card Detail - Login
+
+Alanları için işlemler yapılmıştır.
+
+
+Fake api (json-server) kullanarak CRUD(update hariç) işlemleri yapılmıştır.
+src/api/db.json
+json-server --watch -p 5000 db.json
+isteklerin doğru çalışması için 5000. portta çalıştırınız
+
+
+Kullandığım teknolojiler
+State managament : Redux Toolkit
+
+Route : React Router Dom
+
+Style : SCSS (olduğunca pixel-perfect) => tabiki bu route hariç :)
+
+Typescript
+
+Hook...
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
