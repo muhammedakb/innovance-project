@@ -33,6 +33,7 @@ function App({ user }: any) {
               }}
             />
           ))}
+          <Redirect to="/not-found" />
         </Switch>
         <ToastContainer />
       </div>

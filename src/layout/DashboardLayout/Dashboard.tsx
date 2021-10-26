@@ -8,11 +8,16 @@ import logoutIcon from "../../components/icons/logout.svg";
 import "./dashboard.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../stores/auth";
+import { useHistory } from "react-router-dom";
 
 const Dashboard: React.FC = () => {
   const dispatch = useDispatch();
+  let history = useHistory();
   const { user } = useSelector((state: any) => state.auth);
-
+  const logOut = () => {
+    dispatch(logout());
+    history.push("/login");
+  };
   return (
     <div className="dashboard">
       <img src={logo} alt="logo" className="logo" />
@@ -45,7 +50,7 @@ const Dashboard: React.FC = () => {
               </NavLink>
             </li>
           </ul>
-          <button className="logout" onClick={() => dispatch(logout())}>
+          <button className="logout" onClick={logOut}>
             <img src={logoutIcon} alt="<-" /> <span>Log Out</span>
           </button>
         </div>

@@ -4,7 +4,7 @@ import addbtn from "../icons/add-btn.svg";
 
 interface IProps {
   title: string;
-  link: string;
+  link?: string;
 }
 const style = {
   border: "1px solid #e7e7e7",
@@ -27,12 +27,21 @@ const img = {
 const AddNew = ({ title, link }: IProps) => {
   return (
     <div className="balance-box" style={style}>
-      <Link to={link}>
-        <p className="balance-title new" style={titleNew}>
-          {title}
-        </p>
-        <img src={addbtn} alt="+" style={img} />
-      </Link>
+      {link ? (
+        <Link to={link ? link : ""}>
+          <p className="balance-title new" style={titleNew}>
+            {title}
+          </p>
+          <img src={addbtn} alt="+" style={img} />
+        </Link>
+      ) : (
+        <>
+          <p className="balance-title new" style={titleNew}>
+            {title}
+          </p>
+          <img src={addbtn} alt="+" style={img} />
+        </>
+      )}
     </div>
   );
 };

@@ -1,21 +1,31 @@
-import AddNew from "./AddNew";
+import { Link } from "react-router-dom";
+import { formatMoney } from "../../helpers/money-format/moneyFormat";
 
 interface Props {
-  money: number;
+  id: React.Key | number | null | undefined;
+  type: string | undefined;
+  name?: string | undefined;
+  number?: string | undefined;
+  amount: number | undefined;
+  create?: string | undefined;
+  expirationDate?: string | undefined;
+  maxTransferLimit?: number | undefined;
+  credit?: boolean | undefined;
+  maxCredit?: number | undefined;
+  contactless?: boolean | undefined;
 }
 
-const index = ({ money }: Props) => {
+const index = ({ id, type, amount }: Props) => {
   return (
     <div className="account-balance">
-      <h3>Account Balance</h3>
-      <main>
-        <div className="balance-box">
-          <p className="balance-title">Current Account</p>
-          <span className="money">{money}</span>
-          <span className="lira">₺</span>
-        </div>
-        <AddNew title="Add New Account" link="/accounts" />
-      </main>
+      <Link
+        to={`/cards/${id}`}
+        className={`balance-box ${type === "debit" ? "debit" : "credit"}`}
+      >
+        <p className="balance-title">{type?.toLocaleUpperCase()} CARD</p>
+        <span className="money">{formatMoney(amount)}</span>
+        <span className="lira">₺</span>
+      </Link>
     </div>
   );
 };

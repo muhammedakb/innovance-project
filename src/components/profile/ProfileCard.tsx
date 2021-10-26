@@ -17,8 +17,8 @@ const ProfileCard = () => {
     return <Error message={error} />;
   }
 
-  return data.map((user: any) => (
-    <div className="profile-card">
+  return data.map((user: any, index: number) => (
+    <div className="profile-card" key={index}>
       <div className="head-img">
         <img src={user.coverPhoto} alt="" className="cover" />
         <div className="side">

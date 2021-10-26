@@ -4,48 +4,69 @@
   h1 {
     text-transform: capitalize;
   }
-  .account-balance {
+  h3 {
+    font-size: 25px;
+    font-weight: 500;
     margin-top: 46px;
-    padding-bottom: 40px;
+    margin-left: 25px;
+    margin-bottom: -20px;
+  }
+  .show-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+    padding-bottom: 1rem;
     border-bottom: 1px solid #ccc7c7;
-    h3 {
-      font-size: 25px;
-      font-weight: 500;
+  }
+  .account-balance {
+    padding-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    &:nth-child(4) {
+      margin-left: 25px;
     }
-    main {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 8px;
-      .balance-box {
-        border: 1px solid #e7e7e7;
-        border-radius: 2px;
-        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-        width: 315px;
-        height: 179px;
-        padding: 21px 61px 0px 62px;
-        .balance-title {
-          font-size: 21px;
-          font-weight: 800;
-          &.new {
-            font-size: 17px;
-            color: #535353;
-          }
+    &:not(:nth-child(4)) {
+      margin-left: 25px;
+    }
+    .balance-box {
+      border: 4px solid;
+      border-image-slice: 1;
+      border-width: 1px;
+      box-shadow: -10px 5px 5px rgba(0, 0, 0, 0.25);
+      color: #000;
+      width: 315px;
+      height: 179px;
+      padding: 25px 41px 0px 42px;
+      &.debit {
+        border-image-source: linear-gradient(to left, #3431c2, #cd2525);
+      }
+      &.credit {
+        border-image-source: linear-gradient(to left, #254acd, #31c285);
+      }
+      .balance-title {
+        font-size: 23px;
+        font-weight: 500;
+        &.new {
+          font-size: 17px;
+          color: #535353;
         }
-        img {
-          margin-top: 27px;
+      }
+      img {
+        margin-top: 27px;
+      }
+      span {
+        color: #2366b5;
+        font-weight: 700;
+        display: inline-block;
+        margin-top: 35px;
+        &.money {
+          font-size: 27px;
         }
-        span {
-          color: #2366b5;
-          font-weight: 800;
-          display: inline-block;
-          margin-top: 35px;
-          &.money {
-            font-size: 40px;
-          }
-          &.lira {
-            font-size: 30px;
-            margin-left: 10px;
-          }
+        &.lira {
+          font-size: 22px;
+          margin-left: 10px;
         }
       }
     }

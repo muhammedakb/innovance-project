@@ -1,0 +1,20 @@
+section[class="card-detail"] {
+  display: flex;
+  .left {
+    button {
+      margin-top: 2rem;
+      width: 284px;
+      height: 50px;
+      border-radius: 10px;
+      font-size: 17px;
+      background-color: #d03634;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+          margin-left: 15px;
+      }
+    }
+  }
+}

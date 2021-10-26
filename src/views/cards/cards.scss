@@ -1,43 +1,63 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
 
+@mixin input {
+  border: 1px solid rgba(10, 37, 64, 0.35);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 10%), 0 4px 8px rgb(0 0 0 / 10%);
+  padding: 5px;
+}
 .cards {
   background-color: #fff;
   color: #000;
   main {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 88px;
+    margin-top: 38px;
     padding-bottom: 40px;
     border-bottom: 1px solid #ccc7c7;
     a:not(:first-child) {
       margin-left: 30px;
     }
-    .card {
-      height: 169px;
-      width: 284px;
-      border-radius: 20px;
-      padding: 24px;
-      text-transform: capitalize;
-      color: #fff;
-      filter: drop-shadow(0px 0px 10px #2366b5);
-      &:hover {
-        transform: scale(1.05);
+  }
+  .card-form {
+    width: 298px;
+    height: 285px;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px,
+      rgb(0 0 0 / 30%) 0px 30px 60px -30px,
+      rgb(10 37 64 / 35%) 0px -2px 6px 0px inset;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      select {
+        height: 30px;
+        background-color: transparent;
+        @include input;
       }
-      &.debit {
-        background: linear-gradient(106.15deg, #3431c2 6.17%, #cd2525 102.88%);
+      input {
+        @include input;
+        padding: 8px;
+        margin-top: 1.4rem;
+        &:focus {
+          border-color: #2366b5;
+        }
       }
-      &.credit {
-        background: linear-gradient(106.15deg, #31c285 6.17%, #254acd 102.88%);
+      label {
+        input {
+          margin-left: 1.2rem;
+        }
       }
-
-      .head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .foot {
-        margin-top: 53px;
-        font-family: "IBM Plex Mono", monospace;
+      button {
+        width: 80%;
+        margin-left: 10%;
+        height: 30px;
+        border-radius: 10px;
+        background-color: #2366b5;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 1.4rem;
       }
     }
   }

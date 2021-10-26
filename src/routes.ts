@@ -1,6 +1,7 @@
 import React from "react";
 import Accounts from "./views/accounts/Accounts";
-import Cards from "./views/cards/";
+import Cards from "./views/cards/Cards";
+import CardDetail from "./views/cardDetail/CardDetail";
 import Login from "./views/login/Login";
 import Overview from "./views/overview/Overview";
 import Profile from "./views/profile/Profile";
@@ -8,6 +9,8 @@ import Settings from "./views/settings/Settings";
 import Statements from "./views/statements/Statements";
 import Transactions from "./views/transactions/Transactions";
 import Transfers from "./views/transfers/Transfers";
+import Welcome from "./views/welcome/Welcome";
+import NotFound from "./views/not-found/NotFound";
 
 export interface IRoutes {
   path: string;
@@ -20,9 +23,16 @@ export interface IRoutes {
 export const routes: IRoutes[] = [
   {
     path: "/",
-    title: "Login",
+    title: "Welcome",
     exact: true,
-    component: Login,
+    component: Welcome,
+    auth: false,
+  },
+  {
+    path: "/not-found",
+    title: "Welcome",
+    exact: true,
+    component: NotFound,
     auth: false,
   },
   {
@@ -65,6 +75,13 @@ export const routes: IRoutes[] = [
     title: "Cards",
     exact: true,
     component: Cards,
+    auth: true,
+  },
+  {
+    path: "/cards/:id",
+    title: "Card Detail",
+    exact: true,
+    component: CardDetail,
     auth: true,
   },
   {

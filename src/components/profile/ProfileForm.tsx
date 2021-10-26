@@ -48,8 +48,8 @@ const ProfileForm = () => {
               onChange={handleChange}
             />
             <select
-              name=""
-              id=""
+              name="city"
+              id="city"
               defaultValue={user.city}
               onChange={handleChange}
             >

@@ -1,12 +1,30 @@
 import visa from "../icons/visa.png";
-
+import "./card.scss";
 interface Props {
-  type: string;
-  name: string;
-  number: string;
+  type: string | undefined;
+  name: string | undefined;
+  number: string | undefined;
+  amount?: number | undefined;
+  create?: string | undefined;
+  expirationDate?: string | undefined;
+  maxTransferLimit?: number | undefined;
+  credit?: boolean | undefined;
+  maxCredit?: number | undefined;
+  contactless?: boolean | undefined;
 }
 
-const index = ({ type, name, number }: Props) => {
+const Card = ({
+  type,
+  name,
+  number,
+  amount,
+  create,
+  expirationDate,
+  maxTransferLimit,
+  credit,
+  maxCredit,
+  contactless,
+}: Props) => {
   return (
     <div className={`card ${type === "debit" ? "debit" : "credit"}`}>
       <div className="head">
@@ -21,4 +39,4 @@ const index = ({ type, name, number }: Props) => {
   );
 };
 
-export default index;
+export default Card;
