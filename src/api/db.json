@@ -9,8 +9,7 @@
       "create": "2019-10-25",
       "expirationDate": "2025-10-25",
       "maxTransferLimit": 20000,
-      "credit": false,
-      "contactless": true
+      "contactless": "true"
     },
     {
       "id": 365871596,
@@ -21,9 +20,20 @@
       "create": "2021-10-25",
       "expirationDate": "2027-10-25",
       "maxTransferLimit": 20000,
-      "credit": true,
       "maxCredit": 230000,
-      "contactless": true
+      "contactless": "true"
+    },
+    {
+      "id": 502740311,
+      "type": "credit",
+      "holder": "muhammet akbulut",
+      "no": "7320959277190675",
+      "amount": 0,
+      "create": "2021-10-27",
+      "expirationDate": "2025-10-25",
+      "maxTransferLimit": 20000,
+      "maxCredit": 140000,
+      "contactless": "true"
     }
   ],
   "profile": [

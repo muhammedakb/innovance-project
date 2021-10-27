@@ -14,9 +14,8 @@ interface Props {
   create: string | undefined;
   expirationDate: string | undefined;
   maxTransferLimit: number | undefined;
-  credit: boolean | undefined;
   maxCredit?: number | undefined;
-  contactless: boolean | undefined;
+  contactless: string | undefined;
 }
 
 const Table = ({
@@ -28,7 +27,6 @@ const Table = ({
   create,
   expirationDate,
   maxTransferLimit,
-  credit,
   maxCredit,
   contactless,
 }: Props) => {
@@ -77,7 +75,7 @@ const Table = ({
       <tr>
         <td>credit</td>
         <td>
-          {credit ? (
+          {type === "credit" ? (
             <BsCheck2Square color={"#09ae07"} />
           ) : (
             <RiForbid2Fill color={"#D0342C"} />
@@ -97,7 +95,7 @@ const Table = ({
       <tr>
         <td>contactless</td>
         <td>
-          {contactless ? (
+          {contactless === "true" ? (
             <BsCheck2Square color={"#09ae07"} />
           ) : (
             <RiForbid2Fill color={"#D0342C"} />

@@ -34,9 +34,8 @@ const CardForm = ({ user }: Props) => {
     create: getToday(),
     expirationDate: "2025-10-25",
     maxTransferLimit: 20000,
-    credit: "",
     maxCredit: "",
-    contactless: `${"true" ? true : false}`,
+    contactless: "",
   });
 
   const updateField = (e: any) => {
@@ -63,6 +62,8 @@ const CardForm = ({ user }: Props) => {
   //     // profile name
   //     dispatch(getProfileAsync());
   //   }, [dispatch]);
+
+  console.log(form);
 
   return (
     <div className="card-form">

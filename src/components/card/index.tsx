@@ -8,9 +8,9 @@ interface Props {
   create?: string | undefined;
   expirationDate?: string | undefined;
   maxTransferLimit?: number | undefined;
-  credit?: boolean | undefined;
+  credit?: boolean | undefined | string;
   maxCredit?: number | undefined;
-  contactless?: boolean | undefined;
+  contactless?: string | undefined;
 }
 
 const Card = ({

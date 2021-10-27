@@ -27,7 +27,7 @@ interface IDetail {
   maxTransferLimit: number;
   credit: boolean;
   maxCredit?: number;
-  contactless: boolean;
+  contactless: string;
 }
 
 const CardDetail: React.FC<Props> = ({ title }) => {
@@ -77,7 +77,6 @@ const CardDetail: React.FC<Props> = ({ title }) => {
         expirationDate={detail?.expirationDate}
         maxTransferLimit={detail?.maxTransferLimit}
         maxCredit={detail?.maxCredit}
-        credit={detail?.credit}
         contactless={detail?.contactless}
       />
     </section>

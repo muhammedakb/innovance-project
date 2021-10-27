@@ -22,9 +22,9 @@ interface ICard {
   create: string;
   expirationDate: string;
   maxTransferLimit: number;
-  credit: boolean;
+  credit: boolean | string;
   maxCredit?: number;
-  contactless: boolean;
+  contactless: string;
 }
 
 const Cards: React.FC<Props> = ({ title }) => {
