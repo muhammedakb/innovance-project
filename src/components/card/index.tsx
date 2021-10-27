@@ -1,5 +1,6 @@
 import visa from "../icons/visa.png";
 import "./card.scss";
+// import { cc_format } from "../../helpers/card-no/cardNoFormatter";
 interface Props {
   type: string | undefined;
   name: string | undefined;

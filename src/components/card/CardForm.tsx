@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addCardAsync } from "../../stores/card";
 // import { getProfileAsync } from "../../stores/profile";
-
 interface Props {
   user?: string | undefined;
 }
