@@ -20,7 +20,7 @@ State managament : Redux Toolkit
 
 Route : React Router Dom
 
-Style : SCSS (olduğunca pixel-perfect) => tabiki bu route hariç :)
+Style : SCSS (olduğunca pixel-perfect)
 
 Typescript
 
